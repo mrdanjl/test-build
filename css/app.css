@@ -48,16 +48,16 @@
 }
 
 .story .summary {
-  margin-top: 20px;
+  margin-top: 50px;
   color: #2B2B2B;
   line-height: 2em;
   padding: 0 20px;
   text-align: justify;
-  font-size: 1.1em;
+  font-size: 1.25em;
 }
 
 .story p {
-  margin-bottom: 25px;
+  margin-bottom: 30px;
 }
 
 .finish-line {

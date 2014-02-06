@@ -2,7 +2,7 @@ angular.module('Five.controllers', [])
 
 .controller('FiveContentCtrl', function($scope, $ionicLoading, FiveService) {
   $scope.loading = $ionicLoading.show({
-    content: 'Fetching your 5ive <i class="icon ion-freshing"></i>',
+    content: 'Fetching your 5ive ...',
     animation: 'fade-in',
     showBackdrop: true,
     maxWidth: 200,
