@@ -1,15 +1,17 @@
-angular.module('starter.controllers', [])
+angular.module('Five.controllers', [])
 
+.controller('FiveContentCtrl', function($scope, $ionicLoading, FiveService) {
+  $scope.loading = $ionicLoading.show({
+    content: 'Fetching your 5ive ...',
+    animation: 'fade-in',
+    showBackdrop: true,
+    maxWidth: 200,
+    showDelay: 500
+  });  
+  
+  FiveService.all(function(data) {
+    $scope.stories = data.stories;
+    $scope.loading.hide();
+  });
 
-// A simple controller that fetches a list of data from a service
-.controller('PetIndexCtrl', function($scope, PetService) {
-  // "Pets" is a service returning mock data (services.js)
-  $scope.pets = PetService.all();
-})
-
-
-// A simple controller that shows a tapped item's data
-.controller('PetDetailCtrl', function($scope, $stateParams, PetService) {
-  // "Pets" is a service returning mock data (services.js)
-  $scope.pet = PetService.get($stateParams.petId);
 });

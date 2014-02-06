@@ -1,0 +1,9 @@
+<view title="'5IVE'">
+  <content has-header="true" padding="true" scroll="true">
+    <div class="story" ng-repeat="story in stories">
+      <h2>{{ story.title }}</h2>
+      <div class="byline">By {{ story.byline }}</div>
+      <div class="summary" ng-bind-html="story.summary"></div>
+    </div>
+  </content>
+</view>
