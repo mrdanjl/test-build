@@ -2,7 +2,7 @@ angular.module('Five.controllers', [])
 
 .controller('FiveContentCtrl', function($scope, $ionicLoading, FiveService) {
   $scope.loading = $ionicLoading.show({
-    content: 'Fetching your 5ive ...',
+    content: 'Fetching your 5ive <i class="icon ion-freshing"></i>',
     animation: 'fade-in',
     showBackdrop: true,
     maxWidth: 200,
@@ -13,5 +13,15 @@ angular.module('Five.controllers', [])
     $scope.stories = data.stories;
     $scope.loading.hide();
   });
+  
+  $scope.onRefresh = function() {
+    
+    FiveService.all(function(data) {
+      $scope.stories = data.stories;
+      $scope.loading.hide();
+      $scope.$broadcast('scroll.refreshComplete');
+    });
+    
+  } 
 
 });

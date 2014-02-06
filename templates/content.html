@@ -1,9 +1,16 @@
 <view title="'5IVE'">
-  <content has-header="true" padding="true" scroll="true">
+  <content has-header="true" padding="true" scroll="true" on-refresh="onRefresh()">
+    <refresher></refresher>
+    
     <div class="story" ng-repeat="story in stories">
       <h2>{{ story.title }}</h2>
       <div class="byline">By {{ story.byline }}</div>
       <div class="summary" ng-bind-html="story.summary"></div>
+    </div>
+    
+    <div class="finish-line">
+      <i class="icon ion-checkmark-round"></i>
+      <h3>Good job! Come back later to get your next five.</h3>
     </div>
   </content>
 </view>
