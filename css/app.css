@@ -5,21 +5,45 @@
 }
 
 .story {
-  padding: 0 20px; 
+  padding: 20px 0; 
   margin-bottom: 80px;
+}
+
+.story .header {
+  background: url("http://resources3.news.com.au/images/2014/02/06/1226819/504839-41c1eed2-8ec2-11e3-8dff-f6af7c30323d.jpg");
+  background-size: cover;
+  padding: 0;
+  position: relative;
+}
+
+.story .backshade {
+  position: absolute; 
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: #000000;
+  opacity: 0.5;
+  top: 0;
+}
+
+.story .details {
+  z-index: 2;
+  padding: 80px 20px 20px;
+  position: inherit;
 }
 
 .story h2 {
   font-size: 2.5em;
   font-weight: 900;
   margin-bottom: 5px;
+  color: #FFFFFF;
 }
 
 .story .byline {
   font-weight: 600;
   text-transform: uppercase;
   font-size: 0.9em;
-  color: #666666;
+  color: #DFDFDF;
   letter-spacing: 0.5px;
 }
 
@@ -27,6 +51,7 @@
   margin-top: 20px;
   color: #2B2B2B;
   line-height: 2em;
+  padding: 0 20px;
 }
 
 .story p {

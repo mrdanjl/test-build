@@ -1,10 +1,17 @@
 <view title="'5IVE'">
-  <content has-header="true" padding="true" scroll="true" on-refresh="onRefresh()">
+  <content has-header="true" padding="false" scroll="true" on-refresh="onRefresh()">
     <refresher></refresher>
     
     <div class="story" ng-repeat="story in stories">
-      <h2>{{ story.title }}</h2>
-      <div class="byline">By {{ story.byline }}</div>
+      <div class="header">
+
+        <div class="details">
+          <h2>{{ story.title }}</h2>
+          <div class="byline">By {{ story.byline }}</div>
+        </div>
+        <div class="backshade"></div>
+        
+      </div>
       <div class="summary" ng-bind-html="story.summary"></div>
     </div>
     
