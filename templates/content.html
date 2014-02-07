@@ -1,9 +1,10 @@
+<progress id="content-progress" max="100" value="{{ progress }}"></progress>
 <view title="'5IVE'">
-  <content has-header="true" padding="false" scroll="true" on-refresh="onRefresh()">
+  <content has-header="true" padding="false" scroll="true" on-refresh="onRefresh()" on-scroll="onScroll()">
     <refresher></refresher>
     
     <div class="story" ng-repeat="story in stories">
-        <div class="header" style="background: url('{{ story.image }}') #000000; background-size: cover;">
+        <div class="header" back-img="{{ story.image }}">
 
         <div class="details">
           <h2>{{ story.title }}</h2>
@@ -17,7 +18,7 @@
     
     <div class="finish-line" ng-show="stories">
       <i class="icon ion-checkmark-round"></i>
-      <h3>Good job! Come back later to get your next five.</h3>
+        <h3>Good job! Your next update is at {{ nextUpdate }}</h3>
     </div>
   </content>
 </view>

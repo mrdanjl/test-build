@@ -72,3 +72,18 @@
   font-weight: 700; 
   color: #FFFFFF;
 }
+
+progress {
+    position: absolute;
+    z-index: 10;
+    top: 43px;
+    width: 100%;  
+    background-color: #FFFFFF;  
+    border: 0;  
+    height: 2px;  
+    border-radius: 0;  
+}
+
+progress::-moz-progress-bar { background: #3498DB; }
+progress::-webkit-progress-bar { background: #FFFFFF; }
+progress::-webkit-progress-value { background: #0063a6; }
