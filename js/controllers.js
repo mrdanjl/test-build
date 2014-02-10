@@ -17,6 +17,7 @@ angular.module('Five.controllers', [])
       $scope.stories    = data.stories;
       $scope.loading.hide();
       $scope.$broadcast('scroll.refreshComplete');
+      FiveAnalytics.send('event', { event: 'refresh' }); 
     });
     
   };
@@ -32,20 +33,8 @@ angular.module('Five.controllers', [])
     if(!$scope.$$phase) $scope.$apply();
   };
   
-  $scope.initAnalyticsSent = false;
   $scope.initAnalytics     = function() {
-    if (!$scope.initAnalyticsSent) {
-      if (typeof(device) !== 'undefined') {
-        var data = {
-          deviceModel:    device.model,
-          devicePlatform: device.platform,
-          deviceUuid:     device.uuid,
-        };
-        
-        FiveAnalytics.send('initialLoad', data); 
-        $scope.initAnalyticsSent = true;
-       }
-    }
+    FiveAnalytics.send('event', { event: 'initialLoad' }); 
   }
   
   // initial load
