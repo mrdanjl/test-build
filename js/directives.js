@@ -4,7 +4,7 @@ angular.module('Five.directives', [])
     return function(scope, element, attrs){
         var url = attrs.backImg;
         element.css({
-            'background-image': 'url(' + url +')',
+            'background': 'url(' + url +') #000000',
             'background-size' : 'cover'
         });
     };

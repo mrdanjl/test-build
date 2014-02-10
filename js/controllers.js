@@ -29,7 +29,7 @@ angular.module('Five.controllers', [])
     var maxLength = sv.getScrollMax().top - buffer;
     
     $scope.progress = (scrollPos / maxLength) * 100;
-    $scope.$apply();
+    if(!$scope.$$phase) $scope.$apply();
   };
   
   // initial load
