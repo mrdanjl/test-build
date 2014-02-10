@@ -1,6 +1,6 @@
 angular.module('Five.controllers', [])
 
-.controller('FiveContentCtrl', function($scope, $ionicLoading, $ionicScrollDelegate, FiveService) {
+.controller('FiveContentCtrl', function($scope, $ionicLoading, $ionicScrollDelegate, FiveService, FiveAnalytics) {
   $scope.loading = $ionicLoading.show({
     content: 'Fetching your 5ive ...',
     animation: 'fade-in',
@@ -32,6 +32,23 @@ angular.module('Five.controllers', [])
     if(!$scope.$$phase) $scope.$apply();
   };
   
+  $scope.initAnalyticsSent = false;
+  $scope.initAnalytics     = function() {
+    if (!$scope.initAnalyticsSent) {
+      if (typeof(device) !== 'undefined') {
+        var data = {
+          deviceModel:    device.model,
+          devicePlatform: device.platform,
+          deviceUuid:     device.uuid,
+        };
+        
+        FiveAnalytics.send('initialLoad', data); 
+        $scope.initAnalyticsSent = true;
+       }
+    }
+  }
+  
   // initial load
   $scope.onRefresh();
+  $scope.initAnalytics();
 });

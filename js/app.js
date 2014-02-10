@@ -1,4 +1,4 @@
-angular.module('Five', ['ionic', 'Five.services', 'Five.controllers', 'Five.directives'])
+angular.module('Five', ['ionic', 'Five.services', 'Five.controllers', 'Five.directives', 'Five.analytics'])
 
 
 .config(function($stateProvider, $urlRouterProvider) {
