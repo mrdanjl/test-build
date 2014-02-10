@@ -1,5 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.news.five" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget xmlns   = "http://www.w3.org/ns/widgets"
+        xmlns:gap   = "http://phonegap.com/ns/1.0"
+        id          = "com.news.five"
+        version     = "0.0.1" >
     <name>5ive</name>
     <description>
         Your five stories delivered, four times a day
@@ -7,11 +10,11 @@
     <author email="daniel.lee@news.com.au" href="http://www.dailytelegraph.com.au">
         News Corporation Australia
     </author>
+    <gap:plugin name="org.apache.cordova.device" />
     <content src="index.html" />
     <access origin="*" />
     <preference name="fullscreen" value="false" />
     <preference name="webviewbounce" value="false" />
     <preference name="UIWebViewBounce" value="false" />
     <preference name="DisallowOverscroll" value="true" />
-    <gap:plugin name="org.apache.cordova.device" />
 </widget>
